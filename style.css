@@ -302,6 +302,10 @@ svg {
   border-width: 2px;
 }
 
+.phone--hero.phone--photo {
+  border-width: 4px;
+}
+
 .phone--photo::before {
   display: none;
 }

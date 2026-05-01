@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ペイtoデブ - 食事と支出をいっしょに記録するiOSアプリ</title>
-  <meta name="description" content="ペイtoデブは、摂取カロリーと支出を同じ流れで記録し、食べ方とお金の使い方をまとめて振り返れるiOSアプリです。">
+  <meta name="description" content="ペイtoデブは、食品サジェストで食事をすばやく入力し、摂取カロリーと支出を同じ流れで振り返れるiOSアプリです。">
   <meta name="keywords" content="ペイtoデブ,カロリー記録,家計簿,食費管理,食事記録,iOSアプリ,生活ログ">
   <link rel="canonical" href="https://g-horikoshi-216.github.io/pay2debu-pages/">
 
@@ -60,8 +60,8 @@
       <div class="hero__copy">
         <p class="eyebrow anim-up">Calorie + Money Log</p>
         <h1 class="hero__title anim-up anim-delay-1">
-          食べたものと<br>
-          使ったお金を、<br>
+          摂取カロリーと<br>
+          使ったお金を<br>
           一元管理。
         </h1>
         <p class="hero__lead anim-up anim-delay-2">
@@ -88,7 +88,7 @@
         </div>
         <div class="hero__stats anim-up anim-delay-3" aria-label="主な特徴">
           <span>食事</span>
-          <span>支出</span>
+          <span>食品サジェスト</span>
           <span>週次分析</span>
           <span>カレンダー</span>
         </div>
@@ -116,17 +116,17 @@
               </svg>
             </div>
             <h3>食事をすぐ記録</h3>
-            <p>朝食、昼食、夕食、間食ごとに食品名とカロリーを入力。金額も一緒に残せます。</p>
+            <p>朝食、昼食、夕食、間食ごとに食品名、カロリー、任意の金額をひとつの明細に残せます。</p>
           </article>
 
           <article class="feature-card anim-up anim-delay-1">
             <div class="feature-card__icon feature-card__icon--blue" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="28" height="28" focusable="false">
-                <path d="M6 4l6 8 6-8M12 12v8M7 14h10M7 18h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 6h16M4 12h10M4 18h7M17 14l3 3m0 0-3 3m3-3h-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <h3>食費も家計も同じ場所に</h3>
-            <p>食費、コンビニ、外食を中心に、日用品や交通費などの支出も記録できます。</p>
+            <h3>食品サジェストで補完</h3>
+            <p>入力に合わせて最大5件の候補を表示。食品名とカロリーを一括補完できます。</p>
           </article>
 
           <article class="feature-card anim-up anim-delay-2">
@@ -178,22 +178,19 @@
       <div class="section-inner flow__inner">
         <div class="flow__copy">
           <p class="eyebrow anim-up">Daily Flow</p>
-          <h2 class="section-title anim-up">食事をしたら、その場でまとめて記録。</h2>
-          <p class="section-lead anim-up anim-delay-1">
-            食事名、カロリー、金額を入れるだけ。あとから週次分析やカレンダーで、食生活と支出の流れを見返せます。
-          </p>
+          <h2 class="section-title anim-up">食事をしたら、その場でささっと記録。</h2>
         </div>
 
         <div class="flow__steps">
           <article class="step-card anim-up">
             <span class="step-card__number">01</span>
             <h3>食べたものを入力</h3>
-            <p>「コンビニ弁当」「カフェラテ」など、あとで思い出せる名前で残します。</p>
+            <p>食事名、カロリー、金額を入れるだけ。食品サジェストを使えば、候補タップで食事名とカロリーを簡単入力！</p>
           </article>
           <article class="step-card anim-up anim-delay-1">
             <span class="step-card__number">02</span>
-            <h3>kcalと円を追加</h3>
-            <p>カロリーと金額を同じ流れで入力。食費だけの記録にも使えます。</p>
+            <h3>摂取カロリーと支出を追加</h3>
+            <p>食事サジェストで平均カロリーを自動補完。もちろん手動入力も可能です。</p>
           </article>
           <article class="step-card anim-up anim-delay-2">
             <span class="step-card__number">03</span>
@@ -246,15 +243,15 @@
         <div class="faq-list anim-up anim-delay-1">
           <details>
             <summary>ペイtoデブでは何を記録できますか?</summary>
-            <p>食事ごとの食品名、摂取カロリー、数量、任意の金額に加えて、食費や交通費などの支出を記録できます。</p>
+            <p>食事ごとの食品名、摂取カロリー、任意の金額を記録できます。金額を入れると、その日の支出として集計されます。</p>
           </details>
           <details>
-            <summary>カロリーと支出は別々にも記録できますか?</summary>
-            <p>はい。食事入力では金額を任意にでき、支出入力では食費以外のカテゴリも選べます。</p>
+            <summary>金額なしでも記録できますか?</summary>
+            <p>はい。金額は任意です。カロリーだけを先に記録して、あとから明細を編集できます。</p>
           </details>
           <details>
-            <summary>食品検索がなくても使えますか?</summary>
-            <p>使えます。MVPでは手入力でも記録を続けられることを重視しています。</p>
+            <summary>食品サジェストでは何が補完されますか?</summary>
+            <p>食品名を入力すると最大5件の候補を表示し、候補タップで食品名とkcalを補完します。kcalは補完後も手動編集できます。</p>
           </details>
           <details>
             <summary>過去の記録は見返せますか?</summary>
