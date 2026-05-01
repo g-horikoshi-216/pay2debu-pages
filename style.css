@@ -299,6 +299,7 @@ svg {
   padding: 0;
   overflow: hidden;
   background: #000;
+  border-width: 2px;
 }
 
 .phone--photo::before {
@@ -309,7 +310,7 @@ svg {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 26px;
+  border-radius: 30px;
 }
 
 .phone__top {
@@ -1002,6 +1003,7 @@ summary:focus-visible {
 
   .phone--hero {
     transform: none;
+    width: min(72vw, 260px);
   }
 
   .feature-grid,
