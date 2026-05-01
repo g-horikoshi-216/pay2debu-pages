@@ -1072,9 +1072,30 @@ summary:focus-visible {
     padding: 76px 0;
   }
 
-  .feature-grid,
-  .screen-row {
+  .feature-grid {
     grid-template-columns: 1fr;
+  }
+
+  .screen-row {
+    display: flex;
+    grid-template-columns: none;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 16px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .screen-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .phone--small {
+    flex: 0 0 auto;
+    width: min(72vw, 260px);
+    min-height: auto;
+    scroll-snap-align: center;
   }
 
   .feature-card {
