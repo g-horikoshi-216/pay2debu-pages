@@ -55,6 +55,10 @@ svg {
   border-bottom: 3px solid var(--line);
 }
 
+.features {
+  border-top: 3px solid var(--line);
+}
+
 .eyebrow {
   margin: 0 0 14px;
   color: var(--orange-dark);
@@ -631,8 +635,8 @@ details {
 
 .screen-row {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
   align-items: start;
   margin-top: 38px;
 }

@@ -1,330 +1,560 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ペイtoデブ - 食事と支出をいっしょに記録するiOSアプリ</title>
-  <meta name="description" content="ペイtoデブは、食品サジェストで食事をすばやく入力し、摂取カロリーと支出を同じ流れで振り返れるiOSアプリです。">
-  <meta name="keywords" content="ペイtoデブ,カロリー記録,家計簿,食費管理,食事記録,iOSアプリ,生活ログ">
-  <link rel="canonical" href="https://g-horikoshi-216.github.io/pay2debu-pages/">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ペイtoデブ - 食事と支出をいっしょに記録するiOSアプリ</title>
+    <meta
+      name="description"
+      content="ペイtoデブは、食品サジェストで食事をすばやく入力し、摂取カロリーと支出を同じ流れで振り返れるiOSアプリです。"
+    />
+    <meta
+      name="keywords"
+      content="ペイtoデブ,カロリー記録,家計簿,食費管理,食事記録,iOSアプリ,生活ログ"
+    />
+    <link
+      rel="canonical"
+      href="https://g-horikoshi-216.github.io/pay2debu-pages/"
+    />
 
-  <meta property="og:title" content="ペイtoデブ - 食事と支出をいっしょに記録するiOSアプリ">
-  <meta property="og:description" content="食べたもの、カロリー、使ったお金をひとつのアプリで記録。生活のバランスをポップに見える化します。">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://g-horikoshi-216.github.io/pay2debu-pages/">
-  <meta property="og:locale" content="ja_JP">
-  <meta property="og:site_name" content="ペイtoデブ">
-  <meta property="og:image" content="https://g-horikoshi-216.github.io/pay2debu-pages/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="ペイtoデブのアプリアイコン">
+    <meta
+      property="og:title"
+      content="ペイtoデブ - 食事と支出をいっしょに記録するiOSアプリ"
+    />
+    <meta
+      property="og:description"
+      content="食べたもの、カロリー、使ったお金をひとつのアプリで記録。生活のバランスをポップに見える化します。"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://g-horikoshi-216.github.io/pay2debu-pages/"
+    />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:site_name" content="ペイtoデブ" />
+    <meta
+      property="og:image"
+      content="https://g-horikoshi-216.github.io/pay2debu-pages/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="ペイtoデブのアプリアイコン" />
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ペイtoデブ - 食事と支出をいっしょに記録するiOSアプリ">
-  <meta name="twitter:description" content="食事記録と家計簿をひとつに。カロリーと支出をまとめて振り返れるiOSアプリです。">
-  <meta name="twitter:image" content="https://g-horikoshi-216.github.io/pay2debu-pages/og-image.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="ペイtoデブ - 食事と支出をいっしょに記録するiOSアプリ"
+    />
+    <meta
+      name="twitter:description"
+      content="食事記録と家計簿をひとつに。カロリーと支出をまとめて振り返れるiOSアプリです。"
+    />
+    <meta
+      name="twitter:image"
+      content="https://g-horikoshi-216.github.io/pay2debu-pages/og-image.png"
+    />
 
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 
-  <link rel="stylesheet" href="style.css">
-  <noscript>
-    <style>
-      .anim-up { opacity: 1; transform: none; }
-    </style>
-  </noscript>
+    <link rel="stylesheet" href="style.css" />
+    <noscript>
+      <style>
+        .anim-up {
+          opacity: 1;
+          transform: none;
+        }
+      </style>
+    </noscript>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "ペイtoデブ",
-    "operatingSystem": "iOS",
-    "applicationCategory": "HealthApplication",
-    "description": "摂取カロリーと支出を同じ流れで記録し、食事とお金の使い方をまとめて振り返れるiOSアプリ"
-  }
-  </script>
-</head>
-<body>
-  <header class="hero" id="top">
-    <nav class="nav" aria-label="メインナビゲーション">
-      <a class="nav__logo" href="#top" aria-label="ペイtoデブ トップ">
-        <span class="logo-mark" aria-hidden="true">P2D</span>
-        <span>ペイtoデブ</span>
-      </a>
-      <div class="nav__links">
-        <a href="#features">機能</a>
-        <a href="#flow">使い方</a>
-        <a href="#privacy">安心設計</a>
-      </div>
-    </nav>
-
-    <div class="hero__confetti" aria-hidden="true">
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
-    </div>
-
-    <div class="hero__inner">
-      <div class="hero__copy">
-        <p class="eyebrow anim-up">Calorie + Money Log</p>
-        <h1 class="hero__title anim-up anim-delay-1">
-          摂取カロリーと<br>
-          使ったお金を<br>
-          一元管理。
-        </h1>
-        <p class="hero__lead anim-up anim-delay-2">
-          ペイtoデブは、食事記録と家計簿をひとつにしたiOSアプリです。
-          カロリーと支出を同じ画面で追えるから、食べすぎも使いすぎも気づきやすくなります。
-        </p>
-        <div class="hero__actions anim-up anim-delay-3">
-          <a class="btn btn--primary" href="#features">
-            <span class="btn__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="20" height="20" focusable="false">
-                <path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            機能を見る
-          </a>
-          <a class="btn btn--secondary" href="#flow">
-            <span class="btn__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="20" height="20" focusable="false">
-                <path d="M8 5v14l11-7Z" fill="currentColor"/>
-              </svg>
-            </span>
-            記録の流れ
-          </a>
-        </div>
-        <div class="hero__stats anim-up anim-delay-3" aria-label="主な特徴">
-          <span>食事</span>
-          <span>食品サジェスト</span>
-          <span>週次分析</span>
-          <span>カレンダー</span>
-        </div>
-      </div>
-
-      <div class="hero__visual anim-up anim-delay-2" aria-label="ペイtoデブのダッシュボードイメージ">
-        <div class="phone phone--hero phone--photo">
-          <img class="phone__photo" src="screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-05-01%20at%2006.57.24.png" alt="ペイtoデブのホーム画面。今日の摂取カロリーと支出を表示">
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="features" id="features">
-      <div class="section-inner">
-        <p class="eyebrow anim-up">Features</p>
-        <h2 class="section-title anim-up">続けやすさを考えた、食費×カロリーの記録。</h2>
-
-        <div class="feature-grid">
-          <article class="feature-card anim-up">
-            <div class="feature-card__icon feature-card__icon--orange" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="28" height="28" focusable="false">
-                <path d="M4 3v7a3 3 0 0 0 6 0V3M7 13v8M18 3a3 3 0 0 0-2 3v6h4V6a3 3 0 0 0-2-3ZM18 12v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <h3>食事をすぐ記録</h3>
-            <p>朝食、昼食、夕食、間食ごとに食品名、カロリー、任意の金額をひとつの明細に残せます。</p>
-          </article>
-
-          <article class="feature-card anim-up anim-delay-1">
-            <div class="feature-card__icon feature-card__icon--blue" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="28" height="28" focusable="false">
-                <path d="M4 6h16M4 12h10M4 18h7M17 14l3 3m0 0-3 3m3-3h-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <h3>食品サジェストで補完</h3>
-            <p>入力に合わせて最大5件の候補を表示。食品名とカロリーを一括補完できます。</p>
-          </article>
-
-          <article class="feature-card anim-up anim-delay-2">
-            <div class="feature-card__icon feature-card__icon--green" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="28" height="28" focusable="false">
-                <path d="M4 19V5m0 14h16M8 16V9m5 7V6m5 10v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <h3>週ごとの振り返り</h3>
-            <p>総カロリー、総支出、カテゴリ別支出をグラフで確認。今週の傾向を軽くつかめます。</p>
-          </article>
-
-          <article class="feature-card anim-up">
-            <div class="feature-card__icon feature-card__icon--pink" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="28" height="28" focusable="false">
-                <path d="M7 2v4M17 2v4M4 9h16M6 5h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <h3>カレンダーで見返す</h3>
-            <p>日ごとのカロリーと支出をカレンダーに表示。あとから編集や削除もしやすい設計です。</p>
-          </article>
-
-          <article class="feature-card anim-up anim-delay-1">
-            <div class="feature-card__icon feature-card__icon--teal" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="28" height="28" focusable="false">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <h3>ローカル保存</h3>
-            <p>MVPはサーバなしのローカル完結。食事と支出のデータは端末内で管理します。</p>
-          </article>
-
-          <article class="feature-card anim-up anim-delay-2">
-            <div class="feature-card__icon feature-card__icon--yellow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="28" height="28" focusable="false">
-                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
-                <circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
-                <circle cx="12" cy="12" r="2" fill="currentColor"/>
-              </svg>
-            </div>
-            <h3>目標カロリーを設定</h3>
-            <p>目標値を決めて、今日の残りカロリーをチェック。食べ方のペースをつかめます。</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="flow section-band" id="flow">
-      <div class="section-inner flow__inner">
-        <div class="flow__copy">
-          <p class="eyebrow anim-up">Daily Flow</p>
-          <h2 class="section-title anim-up">食事をしたら、その場でささっと記録。</h2>
-        </div>
-
-        <div class="flow__steps">
-          <article class="step-card anim-up">
-            <span class="step-card__number">01</span>
-            <h3>食べたものを入力</h3>
-            <p>食事名、カロリー、金額を入れるだけ。食品サジェストを使えば、候補タップで食事名とカロリーを簡単入力！</p>
-          </article>
-          <article class="step-card anim-up anim-delay-1">
-            <span class="step-card__number">02</span>
-            <h3>摂取カロリーと支出を追加</h3>
-            <p>食事サジェストで平均カロリーを自動補完。もちろん手動入力も可能です。</p>
-          </article>
-          <article class="step-card anim-up anim-delay-2">
-            <span class="step-card__number">03</span>
-            <h3>週で振り返る</h3>
-            <p>「外食が多い週」「間食が増えた日」を、数字とグラフで確認します。</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="showcase">
-      <div class="section-inner">
-        <p class="eyebrow anim-up">Screens</p>
-        <h2 class="section-title anim-up">シンプルな画面で、すっきり管理。</h2>
-
-        <div class="screen-row">
-          <div class="phone phone--small phone--photo anim-up" aria-label="ホーム画面">
-            <img class="phone__photo" src="screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-05-01%20at%2006.57.24.png" alt="ホーム画面。今日のカロリーと支出をひと目で確認">
-          </div>
-
-          <div class="phone phone--small phone--photo anim-up anim-delay-1" aria-label="週次分析画面">
-            <img class="phone__photo" src="screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-05-01%20at%2006.57.39.png" alt="週次分析画面。総カロリー・総支出と曜日別グラフを表示">
-          </div>
-
-          <div class="phone phone--small phone--photo anim-up anim-delay-2" aria-label="記録カレンダー画面">
-            <img class="phone__photo" src="screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-05-01%20at%2006.57.35.png" alt="記録カレンダー画面。日ごとのカロリーと支出を一覧表示">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="privacy section-band" id="privacy">
-      <div class="section-inner privacy__inner">
-        <div>
-          <p class="eyebrow anim-up">Privacy</p>
-          <h2 class="section-title anim-up">記録データは、端末の中で完結。</h2>
-          <p class="section-lead anim-up anim-delay-1">
-            ペイtoデブのMVPは、アカウントやサーバ同期を前提にしない設計です。
-            毎日の食事と支出を、手元のiPhoneでシンプルに管理します。
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="faq" id="faq">
-      <div class="section-inner faq__inner">
-        <p class="eyebrow anim-up">FAQ</p>
-        <h2 class="section-title anim-up">よくある質問</h2>
-        <div class="faq-list anim-up anim-delay-1">
-          <details>
-            <summary>ペイtoデブでは何を記録できますか?</summary>
-            <p>食事ごとの食品名、摂取カロリー、任意の金額を記録できます。金額を入れると、その日の支出として集計されます。</p>
-          </details>
-          <details>
-            <summary>金額なしでも記録できますか?</summary>
-            <p>はい。金額は任意です。カロリーだけを先に記録して、あとから明細を編集できます。</p>
-          </details>
-          <details>
-            <summary>食品サジェストでは何が補完されますか?</summary>
-            <p>食品名を入力すると最大5件の候補を表示し、候補タップで食品名とkcalを補完します。kcalは補完後も手動編集できます。</p>
-          </details>
-          <details>
-            <summary>過去の記録は見返せますか?</summary>
-            <p>カレンダー形式で日ごとのカロリーと支出を確認できます。日別詳細から編集や削除もできます。</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="section-inner cta__inner">
-        <p class="eyebrow anim-up">ペイtoデブ</p>
-        <h2 class="cta__title anim-up anim-delay-1">今日の一食から、生活のバランスを見える化。</h2>
-        <p class="cta__lead anim-up anim-delay-2">食べ方とお金の使い方を、ひとつのアプリで軽く続ける。</p>
-        <a class="btn btn--primary anim-up anim-delay-3" href="#top">
-          <span class="btn__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" focusable="false">
-              <path d="M12 19V5m-7 7 7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          トップへ戻る
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="section-inner footer__inner">
-      <a class="nav__logo" href="#top" aria-label="ペイtoデブ トップ">
-        <span class="logo-mark" aria-hidden="true">P2D</span>
-        <span>ペイtoデブ</span>
-      </a>
-      <nav class="footer__links" aria-label="フッターナビゲーション">
-        <a href="terms.html">利用規約</a>
-        <a href="privacy.html">プライバシーポリシー</a>
-      </nav>
-      <p>&copy; 2026 ペイtoデブ</p>
-    </div>
-  </footer>
-
-  <script>
-    (function () {
-      var targets = document.querySelectorAll('.anim-up');
-      if (!('IntersectionObserver' in window)) {
-        targets.forEach(function (target) {
-          target.classList.add('is-visible');
-        });
-        return;
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "ペイtoデブ",
+        "operatingSystem": "iOS",
+        "applicationCategory": "HealthApplication",
+        "description": "摂取カロリーと支出を同じ流れで記録し、食事とお金の使い方をまとめて振り返れるiOSアプリ"
       }
+    </script>
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <nav class="nav" aria-label="メインナビゲーション">
+        <a class="nav__logo" href="#top" aria-label="ペイtoデブ トップ">
+          <span class="logo-mark" aria-hidden="true">P2D</span>
+          <span>ペイtoデブ</span>
+        </a>
+        <div class="nav__links">
+          <a href="#flow">使い方</a>
+          <a href="#features">機能</a>
+          <a href="#privacy">安心設計</a>
+        </div>
+      </nav>
 
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
+      <div class="hero__confetti" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow anim-up">Calorie + Money Log</p>
+          <h1 class="hero__title anim-up anim-delay-1">
+            摂取カロリーと<br />
+            使ったお金を<br />
+            一元管理。
+          </h1>
+          <p class="hero__lead anim-up anim-delay-2">
+            ペイtoデブは、食事記録と家計簿をひとつにしたiOSアプリです。
+            カロリーと支出を同じ画面で追えるから、食べすぎも使いすぎも気づきやすくなります。
+          </p>
+          <div class="hero__actions anim-up anim-delay-3">
+            <a class="btn btn--secondary" href="#flow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  focusable="false"
+                >
+                  <path d="M8 5v14l11-7Z" fill="currentColor" />
+                </svg>
+              </span>
+              記録の流れ
+            </a>
+            <a class="btn btn--primary" href="#features">
+              <span class="btn__icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  focusable="false"
+                >
+                  <path
+                    d="M5 12h14m-6-6 6 6-6 6"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              機能を見る
+            </a>
+          </div>
+          <div class="hero__stats anim-up anim-delay-3" aria-label="主な特徴">
+            <span>食事</span>
+            <span>食品サジェスト</span>
+            <span>週次分析</span>
+            <span>カレンダー</span>
+          </div>
+        </div>
+
+        <div
+          class="hero__visual anim-up anim-delay-2"
+          aria-label="ペイtoデブのダッシュボードイメージ"
+        >
+          <div class="phone phone--hero phone--photo">
+            <img
+              class="phone__photo"
+              src="screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-05-01%20at%2006.57.24.png"
+              alt="ペイtoデブのホーム画面。今日の摂取カロリーと支出を表示"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="flow section-band" id="flow">
+        <div class="section-inner flow__inner">
+          <div class="flow__copy">
+            <p class="eyebrow anim-up">Daily Flow</p>
+            <h2 class="section-title anim-up">
+              食事をしたら、その場でささっと記録。
+            </h2>
+          </div>
+
+          <div class="flow__steps">
+            <article class="step-card anim-up">
+              <span class="step-card__number">01</span>
+              <h3>食べたものを入力</h3>
+              <p>
+                食事名、カロリー、金額を入れるだけ。食品サジェストを使えば、候補タップで食事名とカロリーを簡単入力！
+              </p>
+            </article>
+            <article class="step-card anim-up anim-delay-1">
+              <span class="step-card__number">02</span>
+              <h3>摂取カロリーと支出を追加</h3>
+              <p>
+                食事サジェストで平均カロリーを自動補完。もちろん手動入力も可能です。
+              </p>
+            </article>
+            <article class="step-card anim-up anim-delay-2">
+              <span class="step-card__number">03</span>
+              <h3>週で振り返る</h3>
+              <p>
+                「外食が多い週」「間食が増えた日」を、数字とグラフで確認します。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="showcase">
+        <div class="section-inner">
+          <p class="eyebrow anim-up">Screens</p>
+          <h2 class="section-title anim-up">
+            シンプルな画面で、すっきり管理。
+          </h2>
+
+          <div class="screen-row">
+            <div
+              class="phone phone--small phone--photo anim-up"
+              aria-label="ホーム画面"
+            >
+              <img
+                class="phone__photo"
+                src="screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-05-01%20at%2006.57.24.png"
+                alt="ホーム画面。今日のカロリーと支出をひと目で確認"
+              />
+            </div>
+
+            <div
+              class="phone phone--small phone--photo anim-up anim-delay-1"
+              aria-label="食品サジェスト画面"
+            >
+              <img
+                class="phone__photo"
+                src="screenshots/pay2debu-sudgest.png"
+                alt="食事入力画面。「おにぎり」と入力すると鮭おにぎり 180kcal・梅おにぎり 170kcal などのサジェストが表示される"
+              />
+            </div>
+
+            <div
+              class="phone phone--small phone--photo anim-up anim-delay-2"
+              aria-label="週次分析画面"
+            >
+              <img
+                class="phone__photo"
+                src="screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-05-01%20at%2006.57.39.png"
+                alt="週次分析画面。総カロリー・総支出と曜日別グラフを表示"
+              />
+            </div>
+
+            <div
+              class="phone phone--small phone--photo anim-up anim-delay-2"
+              aria-label="記録カレンダー画面"
+            >
+              <img
+                class="phone__photo"
+                src="screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20-%202026-05-01%20at%2006.57.35.png"
+                alt="記録カレンダー画面。日ごとのカロリーと支出を一覧表示"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features" id="features">
+        <div class="section-inner">
+          <p class="eyebrow anim-up">Features</p>
+          <h2 class="section-title anim-up">
+            続けやすさを考えた、食費×カロリーの記録。
+          </h2>
+
+          <div class="feature-grid">
+            <article class="feature-card anim-up">
+              <div
+                class="feature-card__icon feature-card__icon--orange"
+                aria-hidden="true"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  focusable="false"
+                >
+                  <path
+                    d="M4 3v7a3 3 0 0 0 6 0V3M7 13v8M18 3a3 3 0 0 0-2 3v6h4V6a3 3 0 0 0-2-3ZM18 12v9"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <h3>食事をすぐ記録</h3>
+              <p>
+                朝食、昼食、夕食、間食ごとに食品名、カロリー、任意の金額をひとつの明細に残せます。
+              </p>
+            </article>
+
+            <article class="feature-card anim-up anim-delay-1">
+              <div
+                class="feature-card__icon feature-card__icon--blue"
+                aria-hidden="true"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  focusable="false"
+                >
+                  <path
+                    d="M4 6h16M4 12h10M4 18h7M17 14l3 3m0 0-3 3m3-3h-7"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <h3>食品サジェストで補完</h3>
+              <p>
+                入力に合わせて最大5件の候補を表示。食品名とカロリーを一括補完できます。
+              </p>
+            </article>
+
+            <article class="feature-card anim-up anim-delay-2">
+              <div
+                class="feature-card__icon feature-card__icon--green"
+                aria-hidden="true"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  focusable="false"
+                >
+                  <path
+                    d="M4 19V5m0 14h16M8 16V9m5 7V6m5 10v-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <h3>週ごとの振り返り</h3>
+              <p>
+                総カロリー、総支出、カテゴリ別支出をグラフで確認。今週の傾向を軽くつかめます。
+              </p>
+            </article>
+
+            <article class="feature-card anim-up">
+              <div
+                class="feature-card__icon feature-card__icon--pink"
+                aria-hidden="true"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  focusable="false"
+                >
+                  <path
+                    d="M7 2v4M17 2v4M4 9h16M6 5h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <h3>カレンダーで見返す</h3>
+              <p>
+                日ごとのカロリーと支出をカレンダーに表示。あとから編集や削除もしやすい設計です。
+              </p>
+            </article>
+
+            <article class="feature-card anim-up anim-delay-1">
+              <div
+                class="feature-card__icon feature-card__icon--teal"
+                aria-hidden="true"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  focusable="false"
+                >
+                  <path
+                    d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <h3>ローカル保存</h3>
+              <p>
+                サーバなしのローカル完結。食事と支出のデータは端末内で管理します。
+              </p>
+            </article>
+
+            <article class="feature-card anim-up anim-delay-2">
+              <div
+                class="feature-card__icon feature-card__icon--yellow"
+                aria-hidden="true"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  focusable="false"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="6"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <circle cx="12" cy="12" r="2" fill="currentColor" />
+                </svg>
+              </div>
+              <h3>目標カロリーを設定</h3>
+              <p>
+                目標値を決めて、今日の残りカロリーをチェック。食べ方のペースをつかめます。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="privacy section-band" id="privacy">
+        <div class="section-inner privacy__inner">
+          <div>
+            <p class="eyebrow anim-up">Privacy</p>
+            <h2 class="section-title anim-up">
+              記録データは、端末の中で完結。
+            </h2>
+            <p class="section-lead anim-up anim-delay-1">
+              ペイtoデブのMVPは、アカウントやサーバ同期を前提にしない設計です。
+              毎日の食事と支出を、手元のiPhoneでシンプルに管理します。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq" id="faq">
+        <div class="section-inner faq__inner">
+          <p class="eyebrow anim-up">FAQ</p>
+          <h2 class="section-title anim-up">よくある質問</h2>
+          <div class="faq-list anim-up anim-delay-1">
+            <details>
+              <summary>ペイtoデブでは何を記録できますか?</summary>
+              <p>
+                食事ごとの食品名、摂取カロリー、任意の金額を記録できます。金額を入れると、その日の支出として集計されます。
+              </p>
+            </details>
+            <details>
+              <summary>金額なしでも記録できますか?</summary>
+              <p>
+                はい。金額は任意です。カロリーだけを先に記録して、あとから明細を編集できます。
+              </p>
+            </details>
+            <details>
+              <summary>食品サジェストでは何が補完されますか?</summary>
+              <p>
+                食品名を入力すると最大5件の候補を表示し、候補タップで食品名とkcalを補完します。kcalは補完後も手動編集できます。
+              </p>
+            </details>
+            <details>
+              <summary>過去の記録は見返せますか?</summary>
+              <p>
+                カレンダー形式で日ごとのカロリーと支出を確認できます。日別詳細から編集や削除もできます。
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="section-inner cta__inner">
+          <p class="eyebrow anim-up">ペイtoデブ</p>
+          <h2 class="cta__title anim-up anim-delay-1">
+            今日の一食から、生活のバランスを見える化。
+          </h2>
+          <p class="cta__lead anim-up anim-delay-2">
+            食べ方とお金の使い方を、ひとつのアプリで軽く続ける。
+          </p>
+          <a class="btn btn--primary anim-up anim-delay-3" href="#top">
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" focusable="false">
+                <path
+                  d="M12 19V5m-7 7 7-7 7 7"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            トップへ戻る
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="section-inner footer__inner">
+        <a class="nav__logo" href="#top" aria-label="ペイtoデブ トップ">
+          <span class="logo-mark" aria-hidden="true">P2D</span>
+          <span>ペイtoデブ</span>
+        </a>
+        <nav class="footer__links" aria-label="フッターナビゲーション">
+          <a href="terms.html">利用規約</a>
+          <a href="privacy.html">プライバシーポリシー</a>
+        </nav>
+        <p>&copy; 2026 ペイtoデブ</p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var targets = document.querySelectorAll(".anim-up");
+        if (!("IntersectionObserver" in window)) {
+          targets.forEach(function (target) {
+            target.classList.add("is-visible");
+          });
+          return;
+        }
+
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 },
+        );
+
+        targets.forEach(function (target) {
+          observer.observe(target);
         });
-      }, { threshold: 0.12 });
-
-      targets.forEach(function (target) {
-        observer.observe(target);
-      });
-    })();
-  </script>
-</body>
+      })();
+    </script>
+  </body>
 </html>
