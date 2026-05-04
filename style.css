@@ -228,6 +228,49 @@ svg {
   background: #fff;
 }
 
+.btn--appstore {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 60px;
+  padding: 10px 22px;
+  border: 2px solid #1a1a1a;
+  border-radius: 12px;
+  background: #1a1a1a;
+  color: #fff;
+  box-shadow: 5px 5px 0 var(--line);
+  font-weight: 600;
+  letter-spacing: 0;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.btn--appstore:hover,
+.btn--appstore:focus-visible {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 var(--line);
+  outline: none;
+}
+
+.btn--appstore__text {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.05;
+}
+
+.btn--appstore__primary {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.btn--appstore__secondary {
+  margin-top: 2px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  opacity: 0.95;
+}
+
 .btn__icon {
   display: inline-grid;
   place-items: center;
